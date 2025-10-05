@@ -1,0 +1,138 @@
+.tech-icons {
+  /* Base Styles */
+  font-size: 3rem;
+  margin: 15px;
+  color: #ffffffd9;
+  
+  /* Smooth Transitions */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 3D Perspective */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  
+  /* Prevent Text Selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Smooth Scaling */
+  will-change: transform;
+}
+
+.tech-icons:hover {
+  /* Transform Effects */
+  transform: scale(1.2) rotateY(10deg) translateY(-5px);
+  
+  /* Color Transition */
+  color: #a855f7;
+  
+  /* Glow Effect */
+  filter: drop-shadow(0 5px 15px rgba(168, 85, 247, 0.4));
+  
+  /* Text Shadow for Better Contrast */
+  text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icons:active {
+  /* Click Feedback */
+  transform: scale(1.15) translateY(-2px);
+  transition: all 0.1s ease;
+}
+
+/* Optional: Different colors for different icon types */
+.tech-icons.frontend:hover { color: #3b82f6; } /* Blue */
+.tech-icons.backend:hover { color: #10b981; } /* Green */
+.tech-icons.database:hover { color: #f59e0b; } /* Amber */
+.tech-icons.tool:hover { color: #ef4444; } /* Red */
+
+/* Focus state for accessibility */
+.tech-icons:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Loading state (if needed for dynamic content) */
+.tech-icons.loading {
+  animation: pulse 2s infinite;
+  opacity: 0.7;
+}
+
+/* Pulse animation for loading state */
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Staggered animation for multiple icons */
+.tech-icons:nth-child(odd) {
+  transition-delay: 0.05s;
+}
+
+.tech-icons:nth-child(even) {
+  transition-delay: 0.1s;
+}
+
+/* Container animation for when icons enter viewport */
+.tech-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tech-icons {
+    font-size: 2.5rem;
+    margin: 12px;
+  }
+  
+  .tech-icons:hover {
+    transform: scale(1.15) translateY(-3px);
+    filter: drop-shadow(0 3px 8px rgba(168, 85, 247, 0.3));
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .tech-icons {
+    font-size: 2rem;
+    margin: 8px;
+  }
+  
+  .tech-icons-container {
+    gap: 10px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .tech-icons {
+    transition: none;
+  }
+  
+  .tech-icons:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tech-icons {
+    color: #e5e7eb;
+  }
+  
+  .tech-icons:hover {
+    filter: drop-shadow(0 5px 15px rgba(168, 85, 247, 0.6));
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .tech-icons:hover {
+    color: #9333ea;
+    text-shadow: 0 0 3px currentColor;
+  }
+}
